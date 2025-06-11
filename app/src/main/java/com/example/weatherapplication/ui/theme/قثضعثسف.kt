@@ -54,3 +54,6 @@
 //        }
 //    }
 //}
+
+
+//https://www.google.com/url?source=meet&sa=D&q=https%3A%2F%2Fapi.open-meteo.com%2Fv1%2Fforecast%3Flatitude%3D30.0626%26longitude%3D31.2497%26daily%3Dtemperature_2m_max%2Ctemperature_2m_min%2Cweather_code%2Cuv_index_max%26hourly%3Dtemperature_2m%2Cweather_code%2Cis_day%26current%3Dtemperature_2m%2Cwind_speed_10m%2Crelative_humidity_2m%2Crain%2Cweather_code%2Capparent_temperature%2Cpressure_msl%2Cis_day%2Cprecipitation&hl=en-US
