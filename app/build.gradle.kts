@@ -44,19 +44,48 @@ android {
     }
 }
 
-
 dependencies {
 
+    // AndroidX Libraries
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+
+    // Jetpack Compose
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // Google Play Services - Location
     implementation(libs.play.services.location)
-    implementation(libs.androidx.compilercommon)
+
+    // Koin for DI
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
+    // Logging
+    implementation("ch.qos.logback:logback-classic:1.4.11")
+
+    // Ktor HTTP Client
+    implementation("io.ktor:ktor-client-android:2.3.5")
+    implementation("io.ktor:ktor-client-json:2.3.5")
+    implementation("io.ktor:ktor-client-serialization:2.3.5")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+
+    // KotlinX Coroutines + Play Services (بدون kotlinx-coroutines-play-services)
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation ("com.google.android.play:core-ktx:1.10.3" )// ← بدل await()
+
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
+
+    // Activity KTX
+    implementation("androidx.activity:activity-ktx:1.8.2")
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -64,22 +93,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
-    implementation(libs.koin.android)
-    implementation(libs.koin.androidx.compose)
-    implementation("ch.qos.logback:logback-classic:1.4.11")
-    implementation(libs.ktor.client.cio)
-    implementation(libs.ktor.server.core)
-    implementation(libs.kotlinx.serialization.json)
-    implementation(libs.ktor.serialization.kotlinx.json)
-    implementation("io.ktor:ktor-client-core:3.1.3")
-    implementation("io.ktor:ktor-client-cio:3.1.3")
-    implementation("io.ktor:ktor-client-content-negotiation:3.1.3")
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.1.3")
-
-   // implementation("com.google.accompanist:accompanist-permissions:0.33.2-alpha")
-    implementation("androidx.activity:activity-ktx:1.8.2")
-
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4")
 }
