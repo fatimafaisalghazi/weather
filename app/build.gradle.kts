@@ -78,7 +78,7 @@ dependencies {
     implementation("io.ktor:ktor-client-content-negotiation:3.1.3")
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.1.3")
 
-    implementation("com.google.accompanist:accompanist-permissions:0.33.2-alpha")
+   // implementation("com.google.accompanist:accompanist-permissions:0.33.2-alpha")
     implementation("androidx.activity:activity-ktx:1.8.2")
 
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4")
