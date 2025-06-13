@@ -1,5 +1,6 @@
-package com.example.weatherapplication.Composable
+package com.example.weatherapplication.ui.theme.Composable
 
+import android.health.connect.datatypes.units.Temperature
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -29,22 +30,23 @@ import androidx.compose.ui.unit.sp
 import com.example.weatherapplication.R
 
 @Composable
-fun HeaderApp(modifier: Modifier = Modifier) {
+fun ScreenContent(modifier: Modifier = Modifier) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
-        item1()
-        Item2(Modifier)
-        Item3()
+        LocationDisplyer(LocationIcon = R.drawable.icon__4_, CityName = "Amarah")//stick
+        WeatherCondionByImage(ConditionIcon = R.drawable.clearsky1)//move
+        DescripeWeatherCondition(temperatureInCeleluis = "24 C","Partly Cloudy","32 C","20 C")//move
     }
 }
 
 @Composable
-fun item1() {
-
-
+fun LocationDisplyer(
+    LocationIcon: Int,
+    CityName: String
+) {
     Box(contentAlignment = Alignment.Center) {
         Row(
             modifier = Modifier
@@ -53,15 +55,14 @@ fun item1() {
             horizontalArrangement = Arrangement.Center
         ) {
 
-            Icon(painter = painterResource(R.drawable.icon__4_), contentDescription = null)
+            Icon(painter = painterResource(LocationIcon), contentDescription = null)
             Spacer(Modifier.width(4.dp))
             Text(
-                "Baghdad", fontWeight = FontWeight(500),
+                CityName, fontWeight = FontWeight(500),
                 fontSize = 16.sp,
                 fontFamily = FontFamily.SansSerif,
                 color = Color.Black,
                 modifier = Modifier.padding(bottom = 8.dp)
-//24°C
             )
         }
     }
@@ -69,33 +70,40 @@ fun item1() {
 
 
 @Composable
-fun Item2(modifier: Modifier) {
+fun WeatherCondionByImage(
+    modifier: Modifier = Modifier,
+    ConditionIcon: Int
+) {
     Spacer(modifier = Modifier.height(14.dp))
     Box(contentAlignment = Alignment.Center) {
         Image(
-            painter = painterResource(R.drawable.mainlyclear1), contentDescription = null,
+            painter = painterResource(ConditionIcon), contentDescription = null,
             modifier = modifier.size(200.dp)
         )
     }
 }
 
 @Composable
-fun Item3() {
+fun DescripeWeatherCondition(
+    temperatureInCeleluis: String,
+    ConditionStr: String,
+    UpperTemp: String,
+    LowerTemp: String
+) {
     Box(contentAlignment = Alignment.Center) {
-
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Spacer(modifier = Modifier.height(12.dp))
             Text(
-                "24°C\n", fontWeight = FontWeight(600),
+                temperatureInCeleluis, fontWeight = FontWeight(600),
                 fontSize = 64.sp,
                 fontFamily = FontFamily.SansSerif,
                 color = Color.Black,
-            )//Partly cloudy
+            )
             Row(Modifier.align(Alignment.CenterHorizontally)) {
                 Text(
-                    "Partly cloudy", fontWeight = FontWeight(500),
+                    ConditionStr, fontWeight = FontWeight(500),
                     fontSize = 16.sp,
                     fontFamily = FontFamily.SansSerif,
                     color = Color.Black,
@@ -124,7 +132,7 @@ fun Item3() {
                     Spacer(modifier = Modifier.width(4.dp))
 
                     Text(
-                        "35 C", fontWeight = FontWeight(500),
+                        UpperTemp, fontWeight = FontWeight(500),
                         fontSize = 16.sp,
                         fontFamily = FontFamily.SansSerif,
                         color = Color.Black,
@@ -150,7 +158,7 @@ fun Item3() {
                     Spacer(modifier = Modifier.width(4.dp))
 
                     Text(
-                        "20 C", fontWeight = FontWeight(500),
+                        LowerTemp, fontWeight = FontWeight(500),
                         fontSize = 16.sp,
                         fontFamily = FontFamily.SansSerif,
                         color = Color.Black,
@@ -160,16 +168,12 @@ fun Item3() {
             }
         }
     }
-    //
-}
-
-@Composable
-fun Item4() {
 
 }
+
 
 @Preview(showBackground = true)
 @Composable
 fun hederPeevie() {
-    HeaderApp()
+    ScreenContent()
 }

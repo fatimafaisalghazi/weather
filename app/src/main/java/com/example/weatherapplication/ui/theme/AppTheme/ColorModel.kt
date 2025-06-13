@@ -17,7 +17,6 @@ val LightColors = ColorScheme(
     onSecondary = Color.Black
 )
 
-
 val DarkColors = ColorScheme(
     primary = Color(0xFFBB86FC),
     CityName =Color(0x323232),

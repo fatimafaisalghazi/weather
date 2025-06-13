@@ -4,12 +4,11 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
 
-class CounterApp : Application() {
+class WeatherApp : Application() {
     override fun onCreate() {
         super.onCreate()
-
         startKoin {
-            androidContext(this@CounterApp)
+            androidContext(this@WeatherApp)
             modules(appModule)
         }
     }

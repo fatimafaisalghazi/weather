@@ -66,18 +66,21 @@ dependencies {
     implementation(libs.koin.androidx.compose)
 
     // Logging
-    implementation("ch.qos.logback:logback-classic:1.4.11")
+//    implementation("ch.qos.logback:logback-classic:1.4.11")
 
     // Ktor HTTP Client
     implementation("io.ktor:ktor-client-android:2.3.5")
     implementation("io.ktor:ktor-client-json:2.3.5")
     implementation("io.ktor:ktor-client-serialization:2.3.5")
     implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.5")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.5")
 
+// https://mvnrepository.com/artifact/io.ktor/ktor-client-core
     // KotlinX Coroutines + Play Services (بدون kotlinx-coroutines-play-services)
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-    implementation ("com.google.android.play:core-ktx:1.10.3" )// ← بدل await()
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.10.2")
+    // implementation ("com.google.android.play:core-ktx:1.10.3" )// ← بدل await()
 
     // Kotlin Serialization
     implementation(libs.kotlinx.serialization.json)
@@ -85,6 +88,10 @@ dependencies {
     // Activity KTX
     implementation("androidx.activity:activity-ktx:1.8.2")
 
+//    implementation ("group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: '2.13.0'")
+    //implementation("com.fasterxml.jackson.core:jackson-databind:2.19.0")
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.3")
     // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
