@@ -26,10 +26,11 @@ import androidx.compose.ui.unit.sp
 import com.example.weatherapplication.ui.theme.SecondryBlack
 
 @Composable
-fun weatherDescCard(modifier: Modifier=Modifier,
+fun weatherDescCard(
     weatherMeasurement:String,
     titleDecripedBy:String,
-    Icon:Int
+    Icon:Int,
+    modifier: Modifier=Modifier
 ) {
     Box(
         modifier = modifier.width(108.dp)
@@ -78,5 +79,5 @@ fun weatherDescCard(modifier: Modifier=Modifier,
 @Preview(showBackground = true)
 @Composable
 fun preniyy() {
-  //  weatherDescCard()
+//   weatherDescCard()
 }

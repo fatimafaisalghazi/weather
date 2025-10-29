@@ -1,3 +1,4 @@
+import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -15,7 +16,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.weatherapplication.FakeData.WeatherFake
 import com.example.weatherapplication.R
 
 val fakeWeather = WeatherFake1(
@@ -68,6 +68,8 @@ fun CurrentWeatherHeaderold(
         )
     }
 }
+
+@SuppressLint("UnrememberedMutableState")
 @Composable
 fun WeatherScreen() {
 
