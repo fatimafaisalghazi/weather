@@ -1,29 +1,16 @@
-//package com.example.weatherapplication.Mapper
-//
-//import com.example.weatherapplication.Data.Module.WeatherDto
-//import com.example.weatherapplication.exception.DataError
-//import com.example.weatherapplication.exception.NetWorkError
-//
-//class WeatherMapper {
-//   private val mapper= jacksonObjectMapper()
-//
-//   fun toEntity(jsonString: String): WeatherDto {
-//      val json = try {
-//         mapper.readTree(jsonString)
-//      }catch (e:Exception){
-//         throw NetWorkError(" failed to parse {${e.message}}")
-//      }
-//      val current =json.get("current")?: throw DataError("unavaible")
-//      return WeatherDto(
-//          latiude = TODO(),
-//          longitude = TODO(),
-//          generation = TODO(),
-//          temperature = TODO(),
-//          precipitation = TODO(),
-//          windSpeed = TODO(),
-//          humidity = TODO(),
-//          uvIndex = TODO()
-//      )
-//
-//   }
-//}
+package com.example.weatherapplication.Mapper
+
+import com.example.weatherapplication.Data.DTO.CurrentWeatherDTO
+import com.example.weatherapplication.entity.CurrentWeather
+
+fun CurrentWeatherDTO.toEntity(): CurrentWeather{
+    return CurrentWeather(
+        time = time.orEmpty(),
+        interval = interval?: 0,
+        is_day = is_day?: false,
+        apparent_temperature = apparent_temperature ?: 0.0,
+        relative_humidity_2m = relative_humidity_2m?: 0,
+        temperature_2m = temperature_2m?: 0,
+        rain = rain ?: 0
+    )
+}
